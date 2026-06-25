@@ -1,0 +1,86 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Quicksand Medium", "0xProto Nerd Font";
+    min-height: 26px;
+}
+
+window#waybar {
+    background: rgba(57,57,69,0.96);
+    border: 2px solid #595959;
+    border-radius: 6px;
+}
+
+tooltip {
+    background: #393945;
+    border: 2px solid #595959;
+    border-radius: 6px;
+    font-family: "Quicksand Medium";
+}
+
+tooltip label {
+    color: #ffffff;
+    padding: 4px;
+}
+
+#battery {
+    background: transparent;
+    font-size: 15px;
+    padding-left: 12px;
+    padding-right: 0px;
+}
+
+#battery.warning {
+    color: #ffcc66;
+}
+
+#battery.critical {
+    color: #ff6666;
+}
+
+#battery.charging {
+    color: #99ff99;
+}
+
+#battery.charging.warning {
+    color: #99ff99;
+}
+
+#battery.charging.critical {
+    color: #99ff99;
+}
+
+#pulseaudio {
+    background: transparent;
+    font-size: 15px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+#bluetooth {
+    background: transparent;
+    font-size: 15px;
+    padding-left: 0px;
+    padding-right: 10px;
+}
+
+#network {
+    background: transparent;
+    font-size: 15px;
+    padding-left: 0px;
+    padding-right: 10px;
+}
+
+#clock {
+    background: transparent;
+    font-size: 14px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+    
+#custom-logout {
+    background: transparent;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 12px;
+}

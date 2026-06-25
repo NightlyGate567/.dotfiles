@@ -1,0 +1,108 @@
+/*
+For further customizing I suggest looking up any configurations here:
+https://github.com/Alexays/Waybar/wiki/Configuration
+*/
+
+{
+    "layer": "top",
+    "gtk-layer-shell": true,
+    "output": "eDP-1", // Perhaps not YOUR Display
+    "position": "top",
+
+    "height": 40,
+    "margin-top": 10,
+    "margin-left": 20,
+    "margin-right": 20,
+
+    "spacing": 5,
+    "modules-left": ["battery", "pulseaudio", "bluetooth", "network"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/logout"],
+
+
+    "battery": {
+	"interval": 5,
+        "format": "{icon} {capacity}%",
+	"format-charging": "󰂄 {capacity}%",
+        "format-icons": ["󰂃", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+	"tooltip": true,
+	"tooltip-format": "{timeTo}",
+	"states": {
+	   "warning": 20,
+	   "critical": 10
+	}
+    },
+
+
+    "pulseaudio": {
+	"format": "{icon}",
+	"format-muted": "󰖁",
+	"format-icons": ["󰕿", "󰖀", "󰕾"],
+	"on-click": "pavucontrol",
+	"on-click-middle": "pamixer --toggle-mute",
+	"on-scroll-up": "pamixer -i 5",
+	"on-scroll-down": "pamixer -d 5",
+	"tooltip": true,
+	"tooltip-format": "{desc} - {volume}%"
+    },
+
+
+    "bluetooth": {
+	"format": "󰂯",
+	"format-disabled": "󰂲",
+	"format-connected": "󰂱",
+	"tooltip": true,
+	"tooltip-format": "Bluetooth",
+	"tooltip-format-disabled": "Bluetooth",
+	"tooltip-format-connected": "{device_alias}",
+	"on-click": "blueman-manager"
+    },
+
+
+    "network": {
+	"interval": 5,
+	"format-wifi": "{icon}",
+	"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+	"format-ethernet": "󰈀",
+	"format-disconnected": "󰤮",
+	"tooltip": true,
+	"tooltip-format": "{frequency} GHz",
+	"on-click": "nm-connection-editor",
+	"on-click-right": "kitty nmtui"
+    },
+
+
+    "clock": {
+	"interval": 5,
+	"format": "{:%H:%M}",
+	"tooltip": true,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 4,
+                    "weeks-pos"     : "left",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#99ffdd'><b>{}</b></span>",
+                              "days":       "<span color='#595959'><b>{}</b></span>",
+                              "weeks":      "<span color='#898989'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffffff'><b>{}</b></span>",
+                              "today":      "<span color='#ee0000'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+
+    },
+
+    "custom/logout": {
+	"format": "󰍃",
+	"on-click": "hyprctl dispatch exit",
+	"tooltip": true,
+        "tooltip-format": "Exit"
+    },
+
+}
