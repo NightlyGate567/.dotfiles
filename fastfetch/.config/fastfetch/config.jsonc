@@ -13,8 +13,8 @@
   "display": {
       "separator": " ~ ",
       "color": {
-	  "title": "cyan",
-	  "keys": "blue"
+	  "title": "light_magenta",
+	  "keys": "dim_white"
       }
   },
 
